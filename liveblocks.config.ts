@@ -5,13 +5,14 @@ const client = createClient({
   // publicApiKey:
   //   "pk_dev_2cHq2gkhzt0vKrj5k7V9uOPBE45GJPZ3LzITXpR5FqFYDOcxiS1FBJN_EXFE4gia",
   authEndpoint: "/api/liveblocks-auth",
+  throttle: 16,
 });
 
 // Presence represents the properties that exist on every user in the Room
 // and that will automatically be kept in sync. Accessible through the
 // `user.presence` property. Must be JSON-serializable.
 type Presence = {
-  // cursor: { x: number, y: number } | null,
+  cursor: { x: number; y: number } | null;
   // ...
 };
 
